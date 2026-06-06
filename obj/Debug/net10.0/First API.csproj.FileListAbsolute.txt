@@ -1,0 +1,37 @@
+/Users/vladislav/VS code Projects/First API/bin/Debug/net10.0/appsettings.Development.json
+/Users/vladislav/VS code Projects/First API/bin/Debug/net10.0/appsettings.json
+/Users/vladislav/VS code Projects/First API/bin/Debug/net10.0/First API.staticwebassets.endpoints.json
+/Users/vladislav/VS code Projects/First API/bin/Debug/net10.0/First API
+/Users/vladislav/VS code Projects/First API/bin/Debug/net10.0/First API.deps.json
+/Users/vladislav/VS code Projects/First API/bin/Debug/net10.0/First API.runtimeconfig.json
+/Users/vladislav/VS code Projects/First API/bin/Debug/net10.0/First API.dll
+/Users/vladislav/VS code Projects/First API/bin/Debug/net10.0/First API.pdb
+/Users/vladislav/VS code Projects/First API/bin/Debug/net10.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/vladislav/VS code Projects/First API/bin/Debug/net10.0/Microsoft.OpenApi.dll
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/First API.csproj.AssemblyReference.cache
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/rpswa.dswa.cache.json
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/First API.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/First API.AssemblyInfoInputs.cache
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/First API.AssemblyInfo.cs
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/First API.csproj.CoreCompileInputs.cache
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/First API.MvcApplicationPartsAssemblyInfo.cs
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/First API.MvcApplicationPartsAssemblyInfo.cache
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/rjimswa.dswa.cache.json
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/scopedcss/bundle/First API.styles.css
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/staticwebassets.build.json
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/staticwebassets.build.json.cache
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/staticwebassets.development.json
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/swae.build.ex.cache
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/First API.csproj.Up2Date
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/First API.dll
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/refint/First API.dll
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/First API.pdb
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/First API.genruntimeconfig.cache
+/Users/vladislav/VS code Projects/First API/obj/Debug/net10.0/ref/First API.dll
+/Users/vladislav/VS code Projects/First API/bin/Debug/net10.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/vladislav/VS code Projects/First API/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/vladislav/VS code Projects/First API/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/vladislav/VS code Projects/First API/bin/Debug/net10.0/tasks.json
