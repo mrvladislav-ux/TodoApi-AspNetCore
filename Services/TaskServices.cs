@@ -13,22 +13,24 @@ public class TaskService
         _context = context;
     }
 
-    public List<TaskItem> Get()
+    public List<TaskItem> Get(int userId)
         {
-            return _context.Tasks.ToList();
+            return _context.Tasks.Where(t => t.UserID == userId).ToList();
         }
 
-    public TaskItem? GetByID(int id)
+    public TaskItem? GetByID(int id , int userId)
         {
-           return _context.Tasks.FirstOrDefault(t => t.Id == id);
+           return _context.Tasks.FirstOrDefault(t => t.Id == id && t.UserID == userId);
         }
 
-    public TaskItem Add(string title)
+    public TaskItem Add(string title , int userId)
         {
             var task = new TaskItem
             {
                 Title = title,
-                IsCompleted = false
+                IsCompleted = false,
+                UserID = userId
+                
             };
 
             _context.Tasks.Add(task);
@@ -37,9 +39,9 @@ public class TaskService
             return task;
         }
 
-    public bool DeleteTask(int id)
+    public bool DeleteTask(int id , int userId)
         {
-            var task = _context.Tasks.FirstOrDefault(t => t.Id == id);
+            var task = _context.Tasks.FirstOrDefault(t => t.Id == id && t.UserID == userId);
 
             if(task == null)
         {
@@ -52,9 +54,9 @@ public class TaskService
             return true;
         }
 
-    public TaskItem? EditTask(int id , UpdatedTaskDto dto)
+    public TaskItem? EditTask(int id , UpdatedTaskDto dto , int userId)
         {
-            var ExistingTask = _context.Tasks.FirstOrDefault(t => t.Id == id);
+            var ExistingTask = _context.Tasks.FirstOrDefault(t => t.Id == id && t.UserID == userId);
 
             if(ExistingTask == null)
         {
@@ -69,19 +71,19 @@ public class TaskService
             return ExistingTask;
         }
 
-    public List<TaskItem> FilterCompleted()
+    public List<TaskItem> FilterCompleted(int userId)
     {
-       return _context.Tasks.Where(t => t.IsCompleted).ToList();
+       return _context.Tasks.Where(t => t.IsCompleted && t.UserID == userId).ToList();
     }
 
-    public List<TaskItem> FilterPending()
+    public List<TaskItem> FilterPending(int userId)
     {
-        return _context.Tasks.Where(t => !t.IsCompleted).ToList();
+        return _context.Tasks.Where(t => !t.IsCompleted && t.UserID == userId).ToList();
     }
 
-    public List<TaskItem> Search(string title)
+    public List<TaskItem> Search(string title , int userId)
     {
-        return _context.Tasks.Where(t => t.Title.Contains(title , StringComparison.OrdinalIgnoreCase)).ToList();
+        return _context.Tasks.Where(t => t.UserID == userId && t.Title.Contains(title , StringComparison.OrdinalIgnoreCase)).ToList();
     }
 
 }

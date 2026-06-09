@@ -7,23 +7,33 @@ Simple REST API for task management built with ASP.NET Core.
 * ASP.NET Core
 * Entity Framework Core
 * SQLite
-* Swagger
-* Git
+* JWT Authentication
 
 ## Features
 
-* Create task
-* Get all tasks
-* Get task by ID
-* Update task
-* Delete task
-* Search tasks by title
+* User registration
+* User login
+* JWT authentication
+* Password hashing
+* Create tasks
+* Update tasks
+* Delete tasks
+* Search tasks
 * Filter completed tasks
 * Filter pending tasks
+* User-specific task ownership
 
 ## Database
 
 Uses SQLite with Entity Framework Core migrations.
+
+## Testing
+
+You can test API using:
+
+* Swagger UI
+* Postman
+
 
 ## Run
 
@@ -41,8 +51,6 @@ http://localhost:5018/swagger
 
 ## Roadmap
 
-* JWT Authentication
-* User accounts
 * Pagination
 * PostgreSQL support
-* Docker
+* Docker support

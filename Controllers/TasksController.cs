@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Text.Json;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace First_API.Controllers
 {
@@ -18,20 +20,24 @@ public class TasksController : ControllerBase
         }
     
 
-
+        [Authorize]
         [HttpGet]
         public ActionResult<List<TaskItem>> Get()
         {
+            var userId = GetUserId();
 
-            var tasks = service.Get();
+            var tasks = service.Get(userId);
 
             return Ok(tasks);
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public ActionResult<TaskItem> GetByID(int id)
         {
-            var task = service.GetByID(id);
+            var userId = GetUserId();
+
+            var task = service.GetByID(id , userId);
 
             if(task == null)
             {
@@ -42,10 +48,14 @@ public class TasksController : ControllerBase
         }
         
 
+        [Authorize]
         [HttpPost]
         public ActionResult<TaskItem> Add(CreatedTaskDto dto)
         {
-            var CreatedTask = service.Add(dto.Title);
+
+            var userId = GetUserId();
+
+            var CreatedTask = service.Add(dto.Title , userId);
 
             return CreatedAtAction(
                 nameof(GetByID),
@@ -55,11 +65,14 @@ public class TasksController : ControllerBase
         }
 
 
-
+        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult DeleteTask(int id)
         {
-            bool deleted = service.DeleteTask(id);
+
+            var userId = GetUserId();
+
+            bool deleted = service.DeleteTask(id , userId);
 
             if(!deleted)
             {
@@ -70,10 +83,14 @@ public class TasksController : ControllerBase
         }
         
 
+        [Authorize]
         [HttpPut("{id}")]
         public ActionResult<TaskItem> EditTask(int id , UpdatedTaskDto dto)
         {
-            var ChangedTask = service.EditTask(id , dto);
+
+            var userId = GetUserId();
+
+            var ChangedTask = service.EditTask(id , dto , userId);
 
             if(ChangedTask == null)
             {
@@ -83,10 +100,14 @@ public class TasksController : ControllerBase
             return Ok(ChangedTask);
         }
 
+
+        [Authorize]
         [HttpGet("Completed")]
         public ActionResult<List<TaskItem>> FilterCompleted()
         {
-            var SortedTasks = service.FilterCompleted();
+            var userId = GetUserId();
+
+            var SortedTasks = service.FilterCompleted(userId);
 
             if(SortedTasks.Count == 0)
             {
@@ -96,21 +117,34 @@ public class TasksController : ControllerBase
             return Ok(SortedTasks);
         }
 
+
+        [Authorize]
         [HttpGet("Pending")]
         public ActionResult<List<TaskItem>> FilterPendding()
         {
-            var PenddingTasks = service.FilterPending();
+            var userId = GetUserId();
+
+            var PenddingTasks = service.FilterPending(userId);
 
             return Ok(PenddingTasks);
         }
 
+
+        [Authorize]
         [HttpGet("search")]
         public ActionResult<List<TaskItem>> Search(string title)
         {
-            var SearchedTasks = service.Search(title);
+            var userId = GetUserId();
+
+            var SearchedTasks = service.Search(title , userId);
 
             return Ok( SearchedTasks);
         }
+
+        private int GetUserId()
+    {
+        return int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+    }
  
 }
 }
